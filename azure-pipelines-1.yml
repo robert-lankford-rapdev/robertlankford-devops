@@ -29,16 +29,3 @@ stages:
   - job: Unit_Tests
     steps:
     - script: echo "Unit Test"
-  - job: Checkmarx_Scan
-    dependsOn: Unit_Tests
-    steps:
-    - script: echo "Checkmarx Scan"
-- stage: Deploy
-  jobs:
-  - job: UAT_Deploy
-    steps:
-    - script: echo "UAT Deploy"
-  - job: Production_Deploy
-    dependsOn: UAT_Deploy
-    steps:
-    - script: echo "Production Deploy"
